@@ -1,0 +1,19 @@
+{
+  "name": "@vaalentin/math-utils",
+  "version": "1.0.0",
+  "description": "Set of math utilities.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaalentin/math-utils.git"
+  },
+  "keywords": [],
+  "author": "vaalentin <vaalentin@protonmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vaalentin/math-utils/issues"
+  },
+  "homepage": "https://github.com/vaalentin/math-utils#readme"
+}
+
