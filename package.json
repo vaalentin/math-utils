@@ -1,6 +1,6 @@
 {
   "name": "@vaalentin/math-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Set of math utilities.",
   "main": "dist/index.js",
   "scripts": {
