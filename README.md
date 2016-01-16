@@ -1,19 +1,24 @@
 # math-utils
 
-Set of math utilities.
+Set of simple math utilities.
 
 ## Installation
 
 ```
-$ npm i -S @vaalentin/math-utils
+$ npm install --save math-utils
 ```
 
 ## API
 
-#### `getRandomValueInRange(min:float, max:float, round:boolean) => int|float`
+#### `val = getRandomValueInRange(min, max, round)`
 
-#### `mapValueToRange(val:float, inMin:float, inMax:float, outMin:float, outMax:float) => float`
+Get a random value in the given [`min`, `max`] range.
+`round` is `false` by default.
+
+#### `val = mapValueToRange(val, inMin, inMax, outMin, outMax)`
+
+Map `val` from range [`inMin`, `inMax`] to [`outMin`, `outMax`] range.
 
 ## License
 
-MIT
+MIT, see [LICENSE.md](https://github.com/vaalentin/math-utils/blob/master/LICENSE.md) for more details.
