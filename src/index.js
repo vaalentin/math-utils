@@ -10,6 +10,8 @@ export function getRandomValueInRange(min, max, round = false) {
   return round ? Math.round(val) : val;
 }
 
+export const random = getRandomValueInRange;
+
 /**
  * @function mapValueToRange
  * @param {float} val
@@ -30,4 +32,6 @@ export function mapValueToRange(val, inMin, inMax, outMin, outMax) {
 
   return (val - inMin) / (inMax - inMin) * (outMax - outMin) + outMin;
 }
+
+export const map = mapValueToRange;
 
