@@ -6,33 +6,41 @@
  * @returns {float|int}
  */
 export function getRandomValueInRange(min, max, round = false) {
-  let val = Math.random() * (max - min) + min;
-  return round ? Math.round(val) : val;
+  let value = Math.random() * (max - min) + min;
+  return round ? Math.round(value) : value;
 }
 
+/**
+ * @function random
+ * @alias getRandomValueInRange
+ */
 export const random = getRandomValueInRange;
 
 /**
  * @function mapValueToRange
- * @param {float} val
+ * @param {float} value
  * @param {float} inMin
  * @param {float} inMax
  * @param {float} outMin
  * @param {float} outMax
  * @returns {float}
  */
-export function mapValueToRange(val, inMin, inMax, outMin, outMax) {
-  if(val < inMin) {
+export function mapValueToRange(value, inMin, inMax, outMin, outMax) {
+  if(value < inMin) {
     return outMin;
   }
 
-  if(val > inMax) {
+  if(value > inMax) {
     return outMax;
   }
 
-  return (val - inMin) / (inMax - inMin) * (outMax - outMin) + outMin;
+  return (value - inMin) / (inMax - inMin) * (outMax - outMin) + outMin;
 }
 
+/**
+ * @function map
+ * @alias mapValueToRange
+ */
 export const map = mapValueToRange;
 
 /**

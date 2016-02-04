@@ -2,7 +2,7 @@ import test from 'tape';
 import isInteger from 'is-integer';
 import * as utils from '../src/';
 
-test('get random value in range', ({ test }) => {
+test('getRandomValueInRange', ({ test }) => {
   test('should returns a random value within a min and max value', t => {
     t.plan(1);
 
@@ -14,11 +14,11 @@ test('get random value in range', ({ test }) => {
     for(let i = 0; i < 100; i++) {
       const value = getRandomValueInRange(min, max);
       if(value < min || value > max) {
-        t.fail();
+        return t.fail(`${value} is outside of [${min}, ${max}] range`);
       }
     }
 
-    t.pass();
+    t.pass('ok');
   });
   
   test('should returns a random rounded value within a min and max value', t => {
@@ -26,17 +26,39 @@ test('get random value in range', ({ test }) => {
 
     const { getRandomValueInRange } = utils;
 
-    const min = -Math.random() * 100;
-    const max = Math.random() * 100;
+    const min = Math.round(-Math.random() * 100);
+    const max = Math.round(Math.random() * 100);
 
     for(let i = 0; i < 100; i++) {
       const value = getRandomValueInRange(min, max, true);
-      if(!isInteger(value) || value < min || value > max) {
-        t.fail();
+
+      if(!isInteger(value)) {
+        return t.fail(`${value} is not an integer`);
+      }
+
+      if(value < min || value > max) {
+        return t.fail(`${value} is outside of [${min}, ${max}] range`);
       }
     }
 
-    t.pass();
+    t.pass('ok');
+  });
+});
+
+test('mapValueToRange', ({ test }) => {
+  test('should map a value from one range to another', t => {
+    t.plan(1);
+
+    const { mapValueToRange } = utils;
+
+    for(let i = 0; i < 100; i++) {
+      const val = mapValueToRange(i, 0, 100, 0, 1);
+      if(val !== i / 100) {
+        return t.fail();
+      }
+    }
+
+    t.pass('ok');
   });
 });
 
