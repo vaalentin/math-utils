@@ -35,3 +35,18 @@ export function mapValueToRange(val, inMin, inMax, outMin, outMax) {
 
 export const map = mapValueToRange;
 
+/**
+ * @function isPowerOfTwo
+ * @param {float} value
+ * @returns {boolean}
+ */
+export function isPowerOfTwo(value) {
+ return value !== 0 && (value & (value - 1)) === 0;
+}
+
+/**
+ * @function isPOT
+ * @alias isPowerOfTwo
+ */
+export const isPOT = isPowerOfTwo;
+
