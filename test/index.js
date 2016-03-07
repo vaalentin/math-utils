@@ -83,3 +83,19 @@ test('isPowerOfTwo', ({ test }) => {
   })
 });
 
+test('roundToMultiple', ({ test }) => {
+  test('should round a number to a given multiple', t => {
+    const { roundToMultiple } = utils;
+
+    t.equal(roundToMultiple(0.9, 2), 0);
+    t.equal(roundToMultiple(1.1, 2), 2);
+    t.equal(roundToMultiple(2.5, 2), 2);
+    t.equal(roundToMultiple(3.5, 2), 4);
+    t.equal(roundToMultiple(3.5, 2), 4);
+    t.equal(roundToMultiple(2, 6), 0);
+    t.equal(roundToMultiple(4, 6), 6);
+    t.equal(roundToMultiple(34, 6), 36);
+
+    t.end();
+  });
+});

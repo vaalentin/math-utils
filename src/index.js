@@ -58,3 +58,18 @@ export function isPowerOfTwo(value) {
  */
 export const isPOT = isPowerOfTwo;
 
+/**
+ * @function roundToMultiple
+ * @param {float} value
+ * @param {float} multiple
+ * @returns {float}
+ */
+export function roundToMultiple(value, multiple) {
+  return Math.round(value / multiple) * multiple;
+}
+
+/**
+ * @function roundToMul
+ * @alias roundToMultiple
+ */
+export const roundToMul = roundToMultiple;
