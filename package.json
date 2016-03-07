@@ -12,7 +12,10 @@
     "type": "git",
     "url": "git+https://github.com/vaalentin/math-utils.git"
   },
-  "keywords": [],
+  "keywords": [
+    "math",
+    "utils"
+  ],
   "author": "vaalentin <vaalentin@protonmail.com>",
   "license": "MIT",
   "bugs": {
